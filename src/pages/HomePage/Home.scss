@@ -1,0 +1,40 @@
+@import '../../styles/config','../../styles/variables';
+
+.home-section{
+    background-image: url('../../assets/home_bg.jpg');
+    padding: 1em;
+    height: 100%;
+}
+
+.home-nav{
+    background: $home-background;
+    color: #fff;
+    font-weight: 500;
+    @include flexDirection(row);
+    justify-content: space-between;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    position: fixed;
+    width: 92%;
+    z-index: 2;
+   
+}
+
+.show-grid{
+    margin-top: 3.5em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0.8em;
+
+    &-item{
+        transition: all 0.3s ease-in-out;
+    }
+    &-item:hover{
+        transform: scale(1,1);
+    }
+
+    &-image{
+        width: 100%;
+        border-radius: 0.5em;
+    }
+}

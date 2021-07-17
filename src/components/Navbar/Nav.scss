@@ -1,0 +1,55 @@
+@import "../../styles//variables","../../styles/config";
+
+.header{
+    background: $home-background;
+    padding: 1em;
+    font-weight: 600;
+    top: 0;
+    position: sticky;
+    z-index: 2;
+    
+}
+
+.nav{
+    @include flexDirection(column);
+
+    &-main{
+        @include flexDirection(row);
+        justify-content: space-between;
+
+        &-image{
+            width: 20%
+        }
+        &-icons{
+            color: #fff;
+            @include flexDirection(row);
+
+            &-icon{
+                margin-right: 0.7em;
+            }
+        }
+    }
+    &-primary{
+        @include flexDirection(row);
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        margin-top: 1em;
+
+        &-item{
+            @include flexDirection(column);
+            justify-content: center;
+            align-items: center;
+            
+          
+        }
+        &-item p{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+.mickey{
+    width: 35px;
+    margin-top: -0.4em;
+}
