@@ -1,0 +1,40 @@
+@import "../../styles//variables","../../styles/config";
+
+.footer{
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2em;
+    text-align: center;
+
+    &-details{
+    color: #fff;
+}
+    &-disclaimer{
+    font-size: 0.8em;
+}
+    &-disclaimer a{
+    color: lightblue;
+}
+    &-disclaimer span{
+    margin-left: 0.5em;
+}
+}
+
+
+.copy-sec{
+    @include flexDirection(row);
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+
+    &-img{
+        width: 10%;
+        object-fit: contain;
+    }
+}
+
+.copy{
+    text-align: center;
+    font-size: 0.8em;
+}
+

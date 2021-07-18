@@ -12,6 +12,7 @@
     font-weight: 500;
     @include flexDirection(row);
     justify-content: space-between;
+    align-items: center;
     padding: 0.5em;
     border-radius: 0.5em;
     position: fixed;
@@ -25,16 +26,108 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 0.8em;
+    cursor: pointer;
 
-    &-item{
-        transition: all 0.3s ease-in-out;
+    &-menu{
+        display: none;
     }
+
     &-item:hover{
-        transform: scale(1,1);
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
     }
+       
 
     &-image{
         width: 100%;
         border-radius: 0.5em;
+    }
+}
+
+@include keyframes(swing) {
+    15% {
+        -webkit-transform: translateY(5px);
+        transform: translateY(5px);
+    }
+    30% {
+        -webkit-transform: translateY(-5px);
+        transform: translateY(-5px);
+    }
+    50% {
+        -webkit-transform: translateY(3px);
+        transform: translateY(3px);
+    }
+    65% {
+        -webkit-transform: translateY(-3px);
+        transform: translateY(-3px);
+    }
+    80% {
+        -webkit-transform: translateY(2px);
+        transform: translateY(2px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@include media-md{
+    .home-nav{
+        width: 96%;
+        padding: 0.5em 1em;
+        
+    }
+    .home-nav p{
+        font-size: 1.5em;
+
+    }
+    .show-grid{
+        grid-template-columns: repeat(4,1fr);
+        margin-top: 4em;
+    }
+}
+
+@include media-lg{
+    .home-nav{
+        display: none;
+    }
+
+    .show-grid-container{
+        @include flexDirection(row);
+        padding: 2em 0em;
+        
+    }
+    .show-grid-menu{
+        width: 25%;
+        @include flexDirection(column);
+        align-items: center;
+        text-align: center;
+    }
+    .show-grid-names p{
+        color: #fff;
+        opacity: 0.8;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin-bottom: 1em;
+        padding: 0.5em;
+        border-radius:0.5em ;
+        transition: all 0.3s ease-in;
+        cursor: pointer;
+    }
+    .show-grid-names p:hover{
+         background: rgba(0, 0, 0,0.2);
+         opacity: 1;
+    }
+    .show-grid{
+        width: 75%;
+        margin-top: 0;
+        padding: 0 1.5em;
+        grid-template-columns: repeat(5,1fr);
+    }
+    .item-active{
+        color: #fff !important;
+        opacity:1 !important
     }
 }

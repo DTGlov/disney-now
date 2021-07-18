@@ -40,8 +40,14 @@
             @include flexDirection(column);
             justify-content: center;
             align-items: center;
-            
-          
+            cursor: pointer;
+            padding: 0.5em;
+            border-radius:0.5em ;
+            transition: all 0.3s ease-in;
+        }
+
+        &-item:hover{
+            background: rgba(0, 0, 0,0.2);
         }
         &-item p{
             font-size: 0.8rem;
@@ -49,7 +55,75 @@
     }
 }
 
+.icons-on-ipad{
+    display: none;
+}
+
 .mickey{
     width: 35px;
     margin-top: -0.4em;
+}
+
+.active{
+    background: rgba(0, 0, 0,0.2);
+    padding: 0.5em;
+    border-radius:0.5em ;
+}
+
+@include media-md{
+    .header{
+        padding: 0.5em;
+    }
+    .nav{
+        @include flexDirection(row);
+
+        &-main{
+        display: block;
+        width: 20%;
+
+        &-image{
+            width: 70%;
+            padding: 0.5em;
+        }
+
+        &-icons{
+            display: none;
+        }
+        }
+
+        &-primary{
+            margin-top: 0;
+            width: 60%;
+        }
+    }
+    .icons-on-ipad{
+        display: block;
+        @include flexDirection(row);
+    }
+}
+
+@include media-lg{
+    .header{
+        padding: 0;
+    }
+
+    .nav{
+
+        &-main{
+            width: 20%;
+            margin-left: 2em;
+
+            &-image{
+                width: 40%;
+                padding: 1em;
+            }
+        }
+        &-primary{
+            justify-content: right;
+
+            &-item{
+                margin-left: 2em;
+            }
+        }
+    }
 }

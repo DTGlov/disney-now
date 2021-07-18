@@ -11,9 +11,9 @@ function Nav() {
       <header className="header">
         <nav className="nav">
           <div className="nav-main">
-            <div>
+            {/* <div className="nav-main-imgcontainer"> */}
               <img src={disneyLogo} alt="" className="nav-main-image" />
-            </div>
+            {/* </div> */}
             <div className="nav-main-icons">
               <FontAwesomeIcon
                 icon={faSearch}
@@ -27,7 +27,7 @@ function Nav() {
               <FontAwesomeIcon icon={faHome} className="fa-2x" />
               <p>HOME</p>
             </div>
-            <div className="nav-primary-item">
+            <div className="nav-primary-item active">
               <FontAwesomeIcon icon={faPlayCircle} className="fa-2x" />
               <p>SHOWS</p>
             </div>
@@ -38,6 +38,16 @@ function Nav() {
             <div className="nav-primary-item">
               <FontAwesomeIcon icon={faIceCream} className="fa-2x" />
               <p>DCOM</p>
+            </div>
+            <div className="icons-on-ipad">
+              <div className="nav-primary-item">
+                <FontAwesomeIcon icon={faSearch} className="fa-2x" />
+                <p>SEARCH</p>
+              </div>
+              <div className="nav-primary-item">
+                <FontAwesomeIcon icon={faCog} className="fa-2x" />
+                <p>SETTINGS</p>
+              </div>
             </div>
             <div className="nav-primary-item">
               <img src={mickey} alt="" className="mickey" />
